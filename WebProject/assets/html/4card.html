@@ -1,0 +1,22 @@
+<template>
+  <div class="relative flex-none">
+    <img :src="imageUrl" alt="">
+    <div class="absolute bottom-[80px] left-[40px]">
+      <p class="py-3 text-[20px]">{{ title }}</p>
+      <p class="pb-3">{{ subtitle }}</p>
+      <button class=" rounded-3xl bg-white py-[5px] px-[15px] text-black">
+        Shop
+      </button>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    imageUrl: String,
+    title: String,
+    subtitle: String,
+  },
+};
+</script>

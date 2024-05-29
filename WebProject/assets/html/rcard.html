@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Include Tailwind CSS directly -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body>
+  <template id="card-template">
+    <div class="relative flex-none">
+      <img class="object-cover max-lg:w-[1079.500px]" src="" alt="">
+      <div class="absolute bottom-[80px] left-[40px]">
+        <p class="py-3 "></p>
+        <p class="pb-3 text-[25px]"></p>
+        <button class="rounded-3xl bg-white py-[5px] px-[15px] text-black">
+          Shop
+        </button>
+      </div>
+    </div>
+  </template>
+  
+</body>
+</html>
+
+
+
+<script type="text/javascript" data-component>
+  class CardComponent extends HTMLElement {
+    constructor() {
+      super();
+      const template = document.getElementById('card-template').content.cloneNode(true);
+
+      // Set the image URL
+      template.querySelector('img').src = this.getAttribute('image-url');
+      // Set the title
+      template.querySelector('p:nth-of-type(1)').textContent = this.getAttribute('title');
+      // Set the subtitle
+      template.querySelector('p:nth-of-type(2)').textContent = this.getAttribute('subtitle');
+
+      this.appendChild(template);
+    }
+  }
+
+  customElements.define('card-component', CardComponent);
+</script>

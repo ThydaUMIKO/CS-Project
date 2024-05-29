@@ -1,0 +1,10 @@
+@face-font {
+  font-family : 'CustomFont';
+  src: url('../assets/font/futura.woff2') format
+  ('woff2')
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&family=Oswald:wght@200..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
